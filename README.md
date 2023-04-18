@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+<img src="src/images/demo.png" alt="Demo preview sorting app" width='50%' />
+
+#
+
+Explanation of each sorting algorithm in the provided code:
+
+<div ><ol><li><p>Quick sort:
+Quick sort is a divide-and-conquer sorting algorithm that sorts an array by selecting a pivot element and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted. The key operation in quick sort is the partition operation, which rearranges the array so that all elements less than the pivot come before it, and all elements greater than the pivot come after it. Quick sort has an average time complexity of O(n log n), making it one of the most efficient sorting algorithms.</p></li><li><p>Bubble sort:
+Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm gets its name from the way smaller elements "bubble" to the top of the list. Bubble sort has a time complexity of O(n^2), which makes it very inefficient for large lists.</p></li><li><p>Insertion sort:
+Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quick sort, but is often used in small routines because of its simplicity. In insertion sort, the algorithm iterates through the input list and, for each element, inserts it into its correct position in the sorted list. The time complexity of insertion sort is O(n^2), which makes it less efficient than quick sort for large lists.</p></li><li><p>Merge sort:
+Merge sort is a divide-and-conquer algorithm that recursively breaks down a list into sub-lists until each sub-list contains only one element. It then merges these sub-lists to create a larger sorted list. The merge operation combines two sorted sub-lists into a single sorted list, and is the key operation in the algorithm. Merge sort has a time complexity of O(n log n), making it one of the most efficient sorting algorithms.</p></li><li><p>Bogo sort:
+Bogo sort, also known as permutation sort or stupid sort, is a notoriously inefficient sorting algorithm. It works by generating random permutations of the input list until it happens to generate the sorted list. The average time complexity of bogo sort is O(n!), which makes it completely impractical for any realistic application. Bogo sort is mainly used as an example of what not to do when designing a sorting algorithm.</p></li></ol></div>
+
+<div><p>This is a React component that renders a visual representation of sorting algorithms. The component takes an array of integers as input and displays it as a series of columns, with each column's height corresponding to the value of the corresponding element in the array.</p><p>The component supports four sorting algorithms: bubble sort, insertion sort, quick sort, and bogosort. The sorting algorithms can be initiated by clicking the corresponding buttons, and a reset button is also available to shuffle the columns in a random order.</p><p>The component also allows for control of the sorting speed by adjusting the delay between each step of the sorting algorithm.</p><p>Here is the documentation for each function and variable:</p><h3>Functions</h3><h4><code>Column</code></h4><p>This is a functional component that renders a single column with a height proportional to the input value.</p><h5>Props:</h5><ul><li><code>value</code> (number): the value of the element represented by the column</li><li><code>index</code> (number): the index of the element in the array</li></ul><h5>Return:</h5><ul><li>A <code>div</code> element with the <code>column</code> class and a style attribute that sets the height of the column based on the input value.</li></ul><h4><code>shuffle</code></h4><p>This function takes an array as input and returns a new array with the same elements in a random order. The function uses the Fisher-Yates shuffle algorithm.</p><h5>Parameters:</h5><ul><li><code>array</code> (Array): the input array to shuffle</li></ul><h5>Return:</h5><ul><li>A new array with the same elements as the input array, but in a random order.</li></ul><h4><code>ColumnList</code></h4><p>This is the main functional component that renders the list of columns and the sorting controls.</p><h5>Props:</h5><ul><li><code>values</code> (Array): the initial array of values to display as columns</li></ul><h5>State:</h5><ul><li><code>sortedValues</code> (Array): the current array of values to display as columns</li><li><code>withDelay</code> (Boolean): whether or not to include a delay between sorting steps</li><li><code>delay</code> (Number): the delay time in milliseconds between sorting steps</li><li><code>isSorting</code> (Boolean): whether or not a sorting algorithm is currently running</li></ul><h5>Methods:</h5><ul><li><p><code>sleep(ms)</code> (Async Function): a helper function that returns a promise that resolves after a specified delay.</p><ul><li><code>ms</code> (Number): the delay time in milliseconds</li><li><code>Return</code>: A promise that resolves after the specified delay.</li></ul></li><li><p><code>bubbleSort()</code> (Async Function): a sorting algorithm that implements bubble sort.</p><ul><li><code>Return</code>: None</li></ul></li><li><p><code>insertionSort()</code> (Async Function): a sorting algorithm that implements insertion sort.</p><ul><li><code>Return</code>: None</li></ul></li><li><p><code>partition(arr, low, high)</code> (Async Function): a helper function used by the quicksort algorithm that partitions an array around a pivot.</p><ul><li><code>arr</code> (Array): the array to partition</li><li><code>low</code> (Number): the starting index of the partition</li><li><code>high</code> (Number): the ending index of the partition</li><li><code>Return</code>: The index of the pivot element after partitioning.</li></ul></li><li><p><code>quickSort(arr, low, high)</code> (Async Function): a sorting algorithm that implements quicksort.</p><ul><li><code>arr</code> (Array): the array to sort</li><li><code>low</code> (Number): the starting index of the partition (default: 0)</li><li><code>high</code> (Number): the ending index of the partition (default: arr.length - 1)</li><li><code>Return</code>: The sorted array.</li></ul></li><li><p><code>bogosort(arr)</code> (Async Function): a sorting algorithm that implements bogosort. (don't try it 🥴) </p><ul><li><code>arr</code> (Array): the array to sort</li><li><code>Return</code>: The sorted array.</li></ul></li><li><p><code>handleQuickSort()</code> (Async Function): a function that handles the click event on the Quick Sort button.</p></li></ul></div>
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -13,58 +28,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
